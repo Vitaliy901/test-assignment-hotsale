@@ -12,6 +12,5 @@ export default {
           error: String,
           
         }
-
 }
 </script>

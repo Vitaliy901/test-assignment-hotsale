@@ -11,11 +11,11 @@
           autofocus 
           name="email" 
           class="form-control" 
-          placeholder="Email">
+          placeholder="Email" required>
         </div>
         <div class="d-flex flex-column flex-lg-row gap-3 mb-4">
-          <input v-model="form.first_name" type="text" name="first_name" class="form-control" maxlength="255" placeholder="First name">
-          <input v-model="form.last_name" type="text" name="last_name" class="form-control" maxlength="255" placeholder="Last name">
+          <input v-model="form.first_name" type="text" name="first_name" class="form-control" maxlength="255" placeholder="First name" required>
+          <input v-model="form.last_name" type="text" name="last_name" class="form-control" maxlength="255" placeholder="Last name" required>
         </div>
         <div class="d-flex flex-column flex-lg-row gap-3 mb-4">
           <input v-model="form.password" 
@@ -23,12 +23,12 @@
           name="password" 
           class="form-control" 
           placeholder="Password" 
-          minlength="6" maxlength="255">
+          minlength="6" maxlength="255" required>
           <input v-model="form.confirmation_password" type="password" 
           name="confirmation_password" 
           class="form-control" 
           placeholder="Confirm Password" 
-          minlength="6" maxlength="255">
+          minlength="6" maxlength="255" required>
         </div>
         <button @click="createUser" type="submit" class="btn mt-4 w-100 btn-primary">Submit</button>
       </form>
@@ -63,7 +63,7 @@ export default {
     },
     methods: {
       createUser() {
-          axios.post('http://127.0.0.1:9090', this.form, {
+          axios.post('http://127.0.0.1:9000', this.form, {
               headers: {
               "Content-Type": "application/x-www-form-urlencoded",
             }
